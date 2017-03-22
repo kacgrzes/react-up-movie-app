@@ -17,6 +17,10 @@ class MoviesListScreen extends React.Component {
   }
 
   componentDidMount() {
+    this.fetchMovies();
+  }
+
+  fetchMovies() {
     fetch('https://api.themoviedb.org/3/movie/top_rated?api_key=83687da2c34afd61786a6d27eae76acb')
       .then(response => response.json())
       .then(data => {
